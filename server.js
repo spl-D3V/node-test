@@ -10,8 +10,6 @@ hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear();
 })
 
-app.use(express.static(__dirname+'/public'));
-
 app.use((req, res, next)=>{
     let now = new Date().toString();
     console.log(now);
@@ -29,6 +27,10 @@ app.get('/about', (req, res)=>{
     res.render('about.hbs', {
         pageTitle:'Sobre...'
     });
+});
+
+app.get('/rockets', (req, res)=>{
+    res.render('rockets.hbs');
 });
 
 app.listen(port, ()=>{
