@@ -10,6 +10,8 @@ hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear();
 })
 
+app.use(express.static(__dirname+'/public'));
+
 app.use((req, res, next)=>{
     let now = new Date().toString();
     console.log(now);
